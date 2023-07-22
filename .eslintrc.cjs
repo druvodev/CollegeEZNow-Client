@@ -16,5 +16,6 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "react/prop-types": "off", // Disable the prop-types rule for the entire project
   },
 };

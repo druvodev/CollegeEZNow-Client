@@ -3,6 +3,7 @@ import GroupGallery from "./GroupGallery/GroupGallery";
 
 import PopularCollage from "./PopularCollege/PopularCollege";
 import ResearchPapers from "./ResearchPapers/ResearchPapers";
+import ReviewSection from "./ReviewSection/ReviewSection";
 import Search from "./Search/Search";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         <PopularCollage />
         <GroupGallery />
         <ResearchPapers />
+        <ReviewSection />
       </div>
     </>
   );
