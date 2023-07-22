@@ -1,0 +1,26 @@
+[
+  {
+    "collegeImage": "https://static8.depositphotos.com/1001857/807/i/600/depositphotos_8073635-stock-photo-university-of-tennessee-hill.jpg",
+    "collegeName": "Example College 1",
+    "admissionDates": "July 2023 - August 2023",
+    "events": "Orientation Day, Alumni Meet, Career Fair",
+    "researchHistory": "Pioneering research in various fields.",
+    "sports": "Basketball, Soccer, Volleyball"
+  },
+  {
+    "collegeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb9jjL9I9QmV-yGIXk8s2k7RPkRHAi5r0oaA&usqp=CAU",
+    "collegeName": "Sample University",
+    "admissionDates": "September 2023 - October 2023",
+    "events": "Open House, Science Expo, Homecoming",
+    "researchHistory": "Leading research institution with breakthroughs.",
+    "sports": "Swimming, Tennis, Track & Field"
+  },
+  {
+    "collegeImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5rEn-9Va4dkD28RaNAcGutSBNojg9IIRddw&usqp=CAU",
+    "collegeName": "University of Creativity",
+    "admissionDates": "November 2023 - December 2023",
+    "events": "Art Festival, Design Symposium, Coding Challenge",
+    "researchHistory": "Innovative research in arts and technology.",
+    "sports": "Paintball, Chess, Table Tennis"
+  }
+]
