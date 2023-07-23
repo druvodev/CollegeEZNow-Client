@@ -1,21 +1,29 @@
 import StarRatings from "react-star-ratings";
 
-const ReviewCard = ({ collegeName, reviewText, rating }) => {
+const ReviewCard = ({ review }) => {
+  const { collegeName, collegeRating, events, logo } = review;
+  console.log(review);
   return (
-    <div className="flex flex-col justify-between bg-white h-52 p-3 rounded-lg">
+    <div className="flex flex-col justify-between bg-white h-72 p-3 rounded-lg">
       <h3 className="text-xl font-semibold mb-1">{collegeName}</h3>
       <hr />
-      <p className="mt-3">{reviewText}</p>
+      <div className="bg-slate-100 h-24 w-24 rounded-full border border-green-200 mt-2 flex items-center justify-center">
+        <img src={logo} className="h-20 w-fit" />
+      </div>
+      <p className="mt-3">
+        <span className="font-semibold">Events: </span>
+        {events}
+      </p>
       <div className="mt-auto">
         <div className="mt-1 mb-5 flex gap-1 items-center">
           <StarRatings
-            rating={rating}
+            rating={collegeRating}
             starDimension="24px"
             starSpacing="0px"
             starRatedColor="#ffb700"
             starEmptyColor="#fbf1a9"
           />
-          <span className="font-semibold">{rating}</span>
+          <span className="font-semibold">{collegeRating.toFixed(1)}</span>
         </div>
         <button
           onClick={() => document.getElementById("my_modal_3").showModal()}

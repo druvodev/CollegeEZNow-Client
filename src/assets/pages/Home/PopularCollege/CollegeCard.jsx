@@ -1,13 +1,8 @@
 /* eslint-disable react/prop-types */
 
-const CollegeCard = ({
-  collegeImage,
-  collegeName,
-  admissionDates,
-  events,
-  researchHistory,
-  sports,
-}) => {
+const CollegeCard = ({ college }) => {
+  const { collegeName, collegeImage, admissionDate, events, sportsFacilities } =
+    college;
   return (
     <div className="college-card bg-white shadow-lg rounded-xl overflow-hidden">
       <img
@@ -19,7 +14,7 @@ const CollegeCard = ({
         <h2 className="text-2xl font-semibold mb-3">{collegeName}</h2>
         <div className="mb-4">
           <h3 className="text-lg font-medium">Admission Dates:</h3>
-          <p>{admissionDates}</p>
+          <p>{admissionDate}</p>
         </div>
         <div className="mb-4">
           <h3 className="text-lg font-medium">Events:</h3>
@@ -27,11 +22,11 @@ const CollegeCard = ({
         </div>
         <div className="mb-4">
           <h3 className="text-lg font-medium">Research History:</h3>
-          <p>{researchHistory}</p>
+          <p></p>
         </div>
         <div className="mb-4">
           <h3 className="text-lg font-medium">Sports:</h3>
-          <p>{sports}</p>
+          <p>{sportsFacilities}</p>
         </div>
         <a href="#">
           <button className="bg-cyan-300 px-7 py-2 font-semibold">
