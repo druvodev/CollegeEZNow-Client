@@ -1,11 +1,16 @@
+import { useContext, useEffect, useState } from "react";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { AuthContext } from "../../../providers/AuthProvider";
+
 const Admission = () => {
+  const { user } = useContext(AuthContext);
+  const [admissionInfo, setAdmissionInfo] = useState(null);
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here, e.g., send data to the server or store it in state.
     const form = e.target;
     const college = form.collegeName.value;
     const name = form.name.value;
-    const email = form.email.value;
     const address = form.address.value;
     const date = form.date.value;
     const gender = form.gender.value;
@@ -16,7 +21,7 @@ const Admission = () => {
     const admissionForm = {
       college,
       name,
-      email,
+      email: user.email,
       address,
       date,
       gender,
@@ -25,10 +30,30 @@ const Admission = () => {
       motivationLetter,
       extracurricular,
     };
-    console.log(admissionForm);
-    // Reset form fields after submission
+    setAdmissionInfo(admissionForm);
+
     form.reset();
   };
+
+  useEffect(() => {
+    if (admissionInfo) {
+      const fetchData = async () => {
+        try {
+          const response = await useAxiosSecure.post(
+            "/updateUser",
+            admissionInfo
+          );
+          // Do something with the response if needed
+          console.log("Response:", response.data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+
+      // Fetch data when the component mounts
+      fetchData();
+    }
+  }, [admissionInfo]);
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-4 text-center mt-10">
@@ -82,7 +107,8 @@ const Admission = () => {
             name="email"
             id="email"
             className="block w-full p-2 border border-gray-300 rounded-md"
-            required
+            value={user.email}
+            disabled
           />
         </div>
         <div>

@@ -20,7 +20,7 @@ const PopularCollage = () => {
 
   console.log(colleges);
   return (
-    <section className="mt-20">
+    <section className="mt-10">
       <h2 className="text-3xl font-bold text-center mb-3">Featured Colleges</h2>
       <div className="grid grid-cols-3 gap-5">
         {colleges.map((college, index) => (

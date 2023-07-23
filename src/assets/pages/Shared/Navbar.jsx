@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const navOption = (
     <>
       <li>
@@ -53,7 +57,44 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOption}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-sm">Go</a>
+        {user?.displayName ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  src={
+                    user?.photoURL
+                      ? user.photoURL
+                      : "https://i.ibb.co/Ws1r9fp/images.png"
+                  }
+                  alt={user.displayName}
+                />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li className="font-semibold">
+                <a>{user?.displayName}</a>
+                <hr />
+              </li>
+              <li>
+                <a>Profile</a>
+              </li>
+              <li onClick={() => logOut()}>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <a
+            href="/signIn"
+            className="px-7 py-1 border hover:bg-[#00f1e8] hover:text-white duration-200 border-[#00f1e8] font-semibold tracking-wide"
+          >
+            SignIn
+          </a>
+        )}
       </div>
     </div>
   );

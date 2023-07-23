@@ -18,12 +18,12 @@ const GroupGallery = () => {
     {
       image:
         "https://education.uic.edu/wp-content/uploads/sites/137/2019/04/2019.CallMeMister.014-edit-1090x541.jpg",
-      details: "18-06-2022, Dhaka University",
+      details: "18-06-2022,  Jahangirnagar University",
     },
     {
       image:
         "https://media.getmyuni.com/azure/college-images-test/rr-institute-of-technology-rrit-bangalore/ac7660f3763e4c87a1d66bab23f4df10.jpeg",
-      details: "12-03-2023, Dhaka University",
+      details: "12-03-2023, Chittagong University",
     },
   ];
 
