@@ -1,17 +1,19 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const navOption = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <a>Colleges</a>
+        <Link to="/colleges">Colleges</Link>
       </li>
       <li>
-        <a>Admission</a>
+        <Link to="/admission">Admission</Link>
       </li>
       <li>
-        <a>My College</a>
+        <Link to="/myCollege">My College</Link>
       </li>
     </>
   );

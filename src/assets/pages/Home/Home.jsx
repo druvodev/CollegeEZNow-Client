@@ -1,4 +1,3 @@
-import Navbar from "../Shared/Navbar";
 import GroupGallery from "./GroupGallery/GroupGallery";
 
 import PopularCollage from "./PopularCollege/PopularCollege";
@@ -8,16 +7,13 @@ import Search from "./Search/Search";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <div className="px-10">
-        <Search />
-        <PopularCollage />
-        <GroupGallery />
-        <ResearchPapers />
-        <ReviewSection />
-      </div>
-    </>
+    <div className="px-5 sm:px-10">
+      <Search />
+      <PopularCollage />
+      <GroupGallery />
+      <ResearchPapers />
+      <ReviewSection />
+    </div>
   );
 };
 

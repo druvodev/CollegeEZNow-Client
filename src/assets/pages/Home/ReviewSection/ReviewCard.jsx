@@ -1,17 +1,6 @@
-import { useState } from "react";
 import StarRatings from "react-star-ratings";
 
 const ReviewCard = ({ collegeName, reviewText, rating }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div className="flex flex-col justify-between bg-white h-52 p-3 rounded-lg">
       <h3 className="text-xl font-semibold mb-1">{collegeName}</h3>
@@ -29,27 +18,21 @@ const ReviewCard = ({ collegeName, reviewText, rating }) => {
           <span className="font-semibold">{rating}</span>
         </div>
         <button
-          onClick={openModal}
+          onClick={() => document.getElementById("my_modal_3").showModal()}
           className="px-5 border border-[#ffb700] rounded text-black"
         >
           See Feedback
         </button>
       </div>
-      {isModalOpen && (
-        <div className="modal fixed inset-0 flex items-center justify-center z-50">
-          <div className="modal-overlay absolute inset-0 bg-black opacity-50"></div>
-          <div className="modal-container bg-white w-96 p-8 rounded-lg shadow-lg">
-            <button
-              onClick={closeModal}
-              className="modal-close absolute top-0 right-0 m-3 text-2xl font-semibold"
-            >
-              ✕
-            </button>
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Press ESC key or click on ✕ button to close</p>
-          </div>
-        </div>
-      )}
+      <dialog id="my_modal_3" className="modal">
+        <form method="dialog" className="modal-box">
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+        </form>
+      </dialog>
     </div>
   );
 };
