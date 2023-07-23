@@ -28,7 +28,7 @@ const GroupGallery = () => {
   ];
 
   return (
-    <section className="mt-20">
+    <section className="mt-10 sm:mt-20">
       <h2 className="text-3xl font-bold text-center mb-3">
         College Graduate&apos;s Group Pictures
       </h2>

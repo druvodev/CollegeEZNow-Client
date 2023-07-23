@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext } from "react";
 
@@ -8,16 +8,24 @@ const Navbar = () => {
   const navOption = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink exact to="/" activeClassName="active-link">
+          Home
+        </NavLink>
       </li>
       <li>
-        <Link to="/colleges">Colleges</Link>
+        <NavLink to="/colleges" activeClassName="active-link">
+          Colleges
+        </NavLink>
       </li>
       <li>
-        <Link to="/admission">Admission</Link>
+        <NavLink to="/admission" activeClassName="active-link">
+          Admission
+        </NavLink>
       </li>
       <li>
-        <Link to="/myCollege">My College</Link>
+        <NavLink to="/myCollege" activeClassName="active-link">
+          My College
+        </NavLink>
       </li>
     </>
   );
@@ -43,12 +51,12 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-40"
           >
             {navOption}
           </ul>
         </div>
-        <a className="text-xl font-semibold">
+        <a href="/" className="text-xl font-semibold">
           College<span className="primary-text font-bold">EZ</span>
           Now
         </a>

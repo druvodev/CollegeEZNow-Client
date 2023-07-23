@@ -38,10 +38,13 @@ const MyCollege = () => {
                   <span className="font-semibold">Applied Date: </span>{" "}
                   {new Date(student.createdAt).toLocaleString()}
                 </div>
+                <button className="px-3 border border-slate-400 hover:bg-slate-400 hover:text-white duration-200 mt-2">
+                  Send Feedback
+                </button>
               </div>
             </div>
             <hr />
-            <div className="flex gap-5 items-center mt-5">
+            <div className="flex gap-5 items-center mt-7">
               <img
                 src="https://i.ibb.co/Ws1r9fp/images.png"
                 alt="Student"
@@ -57,7 +60,7 @@ const MyCollege = () => {
               </div>
             </div>
 
-            <div>
+            <div className="mt-3">
               <span className="font-semibold">Address: </span> {student.address}
             </div>
             <div>

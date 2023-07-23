@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import StarRatings from "react-star-ratings";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [modalData, setModalData] = useState(null);
   const searchRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     try {
@@ -62,20 +64,25 @@ const Search = () => {
     }
 
     // Show the modal
-    const modal = document.getElementById("my_modal_3");
+    const modal = document.getElementById("my_search_modal");
     if (modal) {
       modal.showModal();
     }
   };
 
+  // Function to handle navigation to college details page
+  const handleCollegeDetails = (collegeId) => {
+    navigate(`/colleges/${collegeId}`);
+  };
+
   return (
     <div
-      className="border w-fit p-0 mx-auto rounded-full mt-10 relative"
+      className="border w-fit p-0 mx-auto rounded-full mt-3 sm:mt-10 relative"
       ref={searchRef}
     >
       <input
         type="text"
-        className="w-96 bg-slate-200 py-1 px-3 rounded-l-full outline-cyan-100"
+        className="sm:w-96 bg-slate-200 py-1 px-3 rounded-l-full outline-cyan-100"
         placeholder="Search College"
         value={searchTerm}
         onChange={handleInputChange}
@@ -83,7 +90,7 @@ const Search = () => {
       <input
         type="button"
         value="Search"
-        className="py-1 px-5 font-semibold bg-cyan-300 rounded-r-full"
+        className="py-1 px-3 sm:px-5 font-semibold bg-cyan-300 rounded-r-full"
         onClick={handleSearch}
       />
 
@@ -105,7 +112,7 @@ const Search = () => {
         </div>
       )}
 
-      <dialog id="my_modal_3" className="modal">
+      <dialog id="my_search_modal" className="modal">
         <form method="dialog" className="modal-box">
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
             ✕
@@ -133,15 +140,17 @@ const Search = () => {
           </div>
           <p>Admission Date: {modalData?.admissionDate}</p>
           <p>Research Count: {modalData?.researchCount}</p>
+
           <button
-            onClick={() => document.getElementById("my_modal_3").showModal()}
+            onClick={() => handleCollegeDetails(modalData?._id)}
             className="text-blue-600 font-semibold mt-2 inline-block p-1 border bg-slate-50"
           >
             Details
           </button>
-          <dialog id="my_modal_3" className="modal">
+
+          <dialog id="my_search_modal" className="modal">
             <form method="dialog" className="modal-box">
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              <button className="btn btn-sm btn-circle btn-error absolute right-2 top-2">
                 ✕
               </button>
             </form>

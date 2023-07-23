@@ -1,8 +1,14 @@
 /* eslint-disable react/prop-types */
 
 const CollegeCard = ({ college }) => {
-  const { collegeName, collegeImage, admissionDate, events, sportsFacilities } =
-    college;
+  const {
+    _id,
+    collegeName,
+    collegeImage,
+    admissionDate,
+    events,
+    sportsFacilities,
+  } = college;
   return (
     <div className="college-card bg-white shadow-lg rounded-xl overflow-hidden">
       <img
@@ -28,7 +34,7 @@ const CollegeCard = ({ college }) => {
           <h3 className="text-lg font-medium">Sports:</h3>
           <p>{sportsFacilities}</p>
         </div>
-        <a href="#">
+        <a href={`/colleges/${_id}`}>
           <button className="bg-cyan-300 px-7 py-2 font-semibold">
             Details
           </button>

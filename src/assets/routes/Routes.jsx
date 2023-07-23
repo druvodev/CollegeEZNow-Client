@@ -7,6 +7,7 @@ import SignIn from "../pages/SignInUp/SignIn";
 import SignUp from "../pages/SignInUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import MyCollege from "../pages/MyCollege/MyCollege";
+import CollegeDetails from "../pages/CollegeDetails/CollegeDetails";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyCollege />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/colleges/:collegeId",
+        element: (
+          <PrivateRoute>
+            <CollegeDetails />
           </PrivateRoute>
         ),
       },
