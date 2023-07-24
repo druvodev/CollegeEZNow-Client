@@ -96,7 +96,9 @@ const Search = () => {
 
       {searchResults.length > 0 && (
         <div className="mt-4 absolute z-50 bg-white/30 backdrop-blur-md pb-5 rounded-xl shadow-md">
-          <h2 className="text-lg font-semibold px-5">Search Results:</h2>
+          <h2 className="text-lg font-semibold px-5 dark:text-gray-50">
+            Search Results:
+          </h2>
           <hr />
           <ul className="mt-1">
             {searchResults.map((college) => (
@@ -113,7 +115,10 @@ const Search = () => {
       )}
 
       <dialog id="my_search_modal" className="modal">
-        <form method="dialog" className="modal-box">
+        <form
+          method="dialog"
+          className="modal-box dark:bg-white/20 backdrop-blur-md dark:text-gray-300"
+        >
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
             ✕
           </button>
@@ -123,7 +128,7 @@ const Search = () => {
             alt={modalData?.collegeName}
             className="w-full h-52 object-cover mb-2 rounded-lg"
           />
-          <h2 className="text-xl font-semibold mb-2">
+          <h2 className="text-xl font-semibold mb-2 dark:text-gray-50">
             {modalData?.collegeName}
           </h2>
           <div className="mt-1 mb-5 flex gap-1 items-center">
@@ -138,12 +143,18 @@ const Search = () => {
               {modalData?.averageRating.toFixed(1)}
             </span>
           </div>
-          <p>Admission Date: {modalData?.admissionDate}</p>
-          <p>Research Count: {modalData?.researchCount}</p>
+          <p>
+            <span className="font-medium">Admission Date:</span>{" "}
+            {modalData?.admissionDate}
+          </p>
+          <p>
+            <span className="font-medium">Research Count:</span>{" "}
+            {modalData?.researchCount}
+          </p>
 
           <button
             onClick={() => handleCollegeDetails(modalData?._id)}
-            className="text-blue-600 font-semibold mt-2 inline-block p-1 border bg-slate-50"
+            className="text-blue-600 font-semibold mt-2 inline-block py-1 px-5 border bg-slate-50 dark:bg-slate-400"
           >
             Details
           </button>

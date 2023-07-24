@@ -4,13 +4,13 @@ const ReviewCard = ({ review }) => {
   const { collegeName, collegeRating, events, logo } = review;
   console.log(review);
   return (
-    <div className="flex flex-col justify-between bg-white h-72 p-3 rounded-lg">
-      <h3 className="text-xl font-semibold mb-1">{collegeName}</h3>
+    <div className="flex flex-col justify-between bg-white dark:bg-white/10 dark:text-gray-50 h-72 p-3 rounded-lg">
+      <h3 className="text-lg sm:text-xl font-semibold mb-1">{collegeName}</h3>
       <hr />
       <div className="bg-slate-100 h-24 w-24 rounded-full border border-green-200 mt-2 flex items-center justify-center">
         <img src={logo} className="h-20 w-fit" />
       </div>
-      <p className="mt-3">
+      <p className="mt-3 dark:text-gray-300">
         <span className="font-semibold">Events: </span>
         {events}
       </p>
@@ -27,7 +27,7 @@ const ReviewCard = ({ review }) => {
         </div>
         <button
           onClick={() => document.getElementById("my_modal_3").showModal()}
-          className="px-5 border border-[#ffb700] rounded text-black"
+          className="px-5 border border-[#ffb700] rounded text-black dark:text-gray-50"
         >
           See Feedback
         </button>

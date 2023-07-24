@@ -56,7 +56,7 @@ const CollegeDetails = () => {
   console.log(collegeDetails);
 
   return (
-    <div className="college-details max-w-4xl mx-auto bg-white">
+    <div className="college-details max-w-4xl mx-auto bg-white dark:bg-white/30 dark:text-gray-50 rounded-b-2xl pb-5">
       <img
         className="w-full h-80 object-cover rounded-b-2xl"
         src={collegeImage}
@@ -133,7 +133,10 @@ const CollegeDetails = () => {
         <h3 className="text-lg font-medium">Reviews:</h3>
         <div className="grid sm:grid-cols-2 gap-5">
           {reviews.map((review, index) => (
-            <div key={index} className="mb-2 shadow-md p-3 rounded-lg">
+            <div
+              key={index}
+              className="mb-2 shadow-md p-3 rounded-lg dark:bg-white/5 "
+            >
               <p className="font-semibold">{review.reviewerName}</p>
               <StarRatings
                 rating={review.rating}

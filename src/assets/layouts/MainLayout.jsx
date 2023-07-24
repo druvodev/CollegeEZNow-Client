@@ -8,7 +8,7 @@ import Footer from "../pages/Shared/Footer";
 const MainLayout = () => {
   const { loading } = useContext(AuthContext);
   return (
-    <div className="bg-[#F6F7F9] min-h-screen">
+    <div className="bg-[#F6F7F9] dark:bg-slate-900 min-h-screen">
       <Navbar />
       {loading ? (
         <div className="min-h-screen flex justify-center items-center mb-16">

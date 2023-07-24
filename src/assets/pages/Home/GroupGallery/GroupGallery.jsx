@@ -12,7 +12,8 @@ import GalleryCard from "./GalleryCard";
 const GroupGallery = () => {
   const groupImg = [
     {
-      image: "https://pbs.twimg.com/media/BhP5pe4CAAA7l9-.jpg",
+      image:
+        "https://ssl.du.ac.bd/fontView/images/activity/1639552313CPS-1577618060.jpg",
       details: "27-01-2023, Dhaka University",
     },
     {
@@ -29,7 +30,7 @@ const GroupGallery = () => {
 
   return (
     <section className="mt-10 sm:mt-20">
-      <h2 className="text-3xl font-bold text-center mb-3">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3  text-gray-800 dark:text-gray-50">
         College Graduate&apos;s Group Pictures
       </h2>
       <Swiper

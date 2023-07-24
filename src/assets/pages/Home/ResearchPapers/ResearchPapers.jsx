@@ -1,43 +1,42 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaUserFriends } from "react-icons/fa";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
-import { AuthContext } from "../../../../providers/AuthProvider";
+
 const ResearchPapers = () => {
   const [researchPapers, setResearchPapers] = useState([]);
-  const { setLoading } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
         const response = await useAxiosSecure.get("/researchPapers");
         setResearchPapers(response.data);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
       }
     };
 
     fetchData();
-  }, [setLoading]);
+  }, []);
 
   return (
     <section className="mt-10 sm:mt-20">
-      <h2 className="text-3xl font-bold text-center mb-3">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3  text-gray-800 dark:text-gray-50">
         Recommended Research Papers
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-white p-5 rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-white dark:bg-white/10 dark:text-gray-50 p-5 rounded-lg">
         {researchPapers.map((paper, index) => (
-          <div key={index} className="flex flex-col shadow p-3 rounded-xl">
+          <div
+            key={index}
+            className="flex flex-col shadow p-3 rounded-xl dark:bg-white/5"
+          >
             <h3 className="text-xl font-semibold mb-1">
               {paper.researchPapers[0].title}
             </h3>
             <hr />
-            <p className="text-gray-600 mb-4 mt-2">
+            <p className="text-gray-600 dark:text-gray-200 mb-4 mt-2">
               {paper.researchPapers[0].description}
             </p>
-            <p className="mb-2 flex gap-2 mt-auto">
+            <p className="mb-2 flex gap-2 mt-auto dark:text-gray-200">
               <span className="flex gap-1 items-center font-semibold">
                 <FaUserFriends className="text-xl" /> Author:
               </span>

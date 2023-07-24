@@ -25,8 +25,8 @@ const MyCollege = () => {
     <>
       {student && (
         <div className="mt-10 flex justify-center">
-          <div className="relative sm:w-[800px] bg-white p-5 sm:p-10 rounded-xl">
-            <div className="flex justify-between mb-2 -mt-4">
+          <div className="relative sm:w-[800px] bg-white dark:bg-white/20 dark:text-gray-100 p-5 sm:p-10 rounded-xl">
+            <div className="flex justify-between mb-2 -mt-4 dark:text-gray-50">
               <img
                 src={student.logo}
                 alt="College Logo"

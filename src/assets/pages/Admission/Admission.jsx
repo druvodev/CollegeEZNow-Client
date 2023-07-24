@@ -56,12 +56,12 @@ const Admission = () => {
   }, [admissionInfo]);
   return (
     <div>
-      <h1 className="text-2xl font-semibold mb-4 text-center mt-10">
+      <h1 className="text-xl sm:text-2xl font-semibold mb-4 text-center mt-10">
         Admission Form
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 max-w-xl mx-auto bg-white p-5 sm:p-10 rounded-2xl"
+        className="space-y-4 max-w-xl mx-auto bg-white dark:bg-white/70 p-5 sm:p-10 rounded-2xl"
       >
         <div>
           <label htmlFor="collegeName" className="font-bold">
