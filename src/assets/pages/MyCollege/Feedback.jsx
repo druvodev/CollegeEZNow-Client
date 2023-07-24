@@ -29,6 +29,8 @@ const Feedback = ({ collegeId, studentName }) => {
       }
     }
   };
+
+  const isSubmitDisabled = rating === 0 || comment.trim() === "";
   return (
     <>
       <button
@@ -61,10 +63,13 @@ const Feedback = ({ collegeId, studentName }) => {
             className="w-full dark:bg-white/10 backdrop-blur-2xl p-2 mt-2 border dark:border-0 outline-cyan-200"
           ></textarea>
           <div className="modal-action">
-            <button className="btn btn-sm bg-rose-400 border-0">Close</button>
+            <button className="btn btn-sm bg-rose-400 border-0 text-black hover:bg-rose-300">
+              Close
+            </button>
             <button
               onClick={handleSubmit}
-              className="btn btn-sm bg-green-400 border-0"
+              className="btn btn-sm bg-green-400 disabled:bg-green-200 text-black border-0 hover:bg-green-300"
+              disabled={isSubmitDisabled}
             >
               Send
             </button>

@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import {} from "react-icons/hi";
+import Profile from "./Profile";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -164,7 +165,7 @@ const Navbar = () => {
                 <hr />
               </li>
               <li>
-                <a>Profile</a>
+                <Profile />
               </li>
               <li onClick={() => logOut()}>
                 <a>Logout</a>
