@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Feedback from "./Feedback";
 
 const MyCollege = () => {
   const [student, setStudent] = useState(null);
@@ -18,9 +19,7 @@ const MyCollege = () => {
 
     fetchData();
   }, [user?.email]);
-
   console.log(student);
-
   return (
     <>
       {student && (
@@ -38,9 +37,10 @@ const MyCollege = () => {
                   <span className="font-semibold">Applied Date: </span>{" "}
                   {new Date(student.createdAt).toLocaleString()}
                 </div>
-                <button className="px-3 border border-slate-400 hover:bg-slate-400 hover:text-white duration-200 mt-2">
-                  Send Feedback
-                </button>
+                <Feedback
+                  collegeId={student?.collegeId}
+                  studentName={student?.name}
+                />
               </div>
             </div>
             <hr />

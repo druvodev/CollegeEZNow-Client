@@ -82,7 +82,7 @@ const Search = () => {
     >
       <input
         type="text"
-        className="sm:w-96 bg-slate-200 py-1 px-3 rounded-l-full outline-cyan-100"
+        className="sm:w-96 bg-slate-200 py-2 px-3 rounded-l-full outline-cyan-100"
         placeholder="Search College"
         value={searchTerm}
         onChange={handleInputChange}
@@ -90,7 +90,7 @@ const Search = () => {
       <input
         type="button"
         value="Search"
-        className="py-1 px-3 sm:px-5 font-semibold bg-cyan-300 rounded-r-full"
+        className="py-2 px-3 sm:px-5 font-semibold bg-cyan-300 rounded-r-full"
         onClick={handleSearch}
       />
 

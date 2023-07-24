@@ -2,7 +2,7 @@ import StarRatings from "react-star-ratings";
 
 const ReviewCard = ({ review }) => {
   const { collegeName, collegeRating, events, logo } = review;
-  console.log(review);
+
   return (
     <div className="flex flex-col justify-between bg-white dark:bg-white/10 dark:text-gray-50 h-72 p-3 rounded-lg">
       <h3 className="text-lg sm:text-xl font-semibold mb-1">{collegeName}</h3>
@@ -33,7 +33,10 @@ const ReviewCard = ({ review }) => {
         </button>
       </div>
       <dialog id="my_modal_3" className="modal">
-        <form method="dialog" className="modal-box">
+        <form
+          method="dialog"
+          className="modal-box dark:bg-white/20 backdrop-blur-xl"
+        >
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
             ✕
           </button>

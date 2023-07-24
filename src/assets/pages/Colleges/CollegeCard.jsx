@@ -1,7 +1,6 @@
 import StarRatings from "react-star-ratings";
 
 const CollegeCard = ({ college }) => {
-  console.log(college);
   const {
     _id,
     collegeName,

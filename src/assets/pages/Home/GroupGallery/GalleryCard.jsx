@@ -1,5 +1,4 @@
 const GroupGallery = ({ details }) => {
-  console.log(details);
   return (
     <div className="relative rounded-2xl overflow-hidden">
       <img

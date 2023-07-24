@@ -20,15 +20,15 @@ const CollegeCard = ({ college }) => {
         <h2 className="text-lg sm:text-2xl font-semibold mb-3 dark:text-gray-50">
           {collegeName}
         </h2>
-        <div className="mb-4">
+        <div className="mb-2">
           <h3 className="text-lg font-medium">Admission Dates:</h3>
           <p>{admissionDate}</p>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <h3 className="text-lg font-medium">Events:</h3>
           <p>{events}</p>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <h3 className="text-lg font-medium">Research History:</h3>
           <p></p>
         </div>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Admission = () => {
   const { user } = useContext(AuthContext);
@@ -39,13 +40,12 @@ const Admission = () => {
     if (admissionInfo) {
       const fetchData = async () => {
         try {
-          const response = await useAxiosSecure.post(
-            "/updateUser",
-            admissionInfo
-          );
-          // Do something with the response if needed
-          console.log("Response:", response.data);
+          await useAxiosSecure.post("/updateUser", admissionInfo);
+          toast.success("You have successfully admitted!");
         } catch (error) {
+          if (error.response.status == 409) {
+            toast.error("You have already admitted!");
+          }
           console.error("Error fetching data:", error);
         }
       };

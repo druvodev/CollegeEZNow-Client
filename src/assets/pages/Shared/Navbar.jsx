@@ -6,7 +6,6 @@ import {} from "react-icons/hi";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isTheme, setIsTheme] = useState("");
-  console.log(isTheme);
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem("theme");
@@ -41,7 +40,7 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "underline underline-offset-4 text-[#26c6da] font-bold"
+              ? "underline underline-offset-4 primary-text font-bold"
               : ""
           }
         >
@@ -53,7 +52,7 @@ const Navbar = () => {
           to="/colleges"
           className={({ isActive }) =>
             isActive
-              ? "underline underline-offset-4 text-[#26c6da] font-bold"
+              ? "underline underline-offset-4 primary-text font-bold"
               : ""
           }
         >
@@ -65,7 +64,7 @@ const Navbar = () => {
           to="/admission"
           className={({ isActive }) =>
             isActive
-              ? "underline underline-offset-4 text-[#26c6da] font-bold"
+              ? "underline underline-offset-4 primary-text font-bold"
               : ""
           }
         >
@@ -77,7 +76,7 @@ const Navbar = () => {
           to="/myCollege"
           className={({ isActive }) =>
             isActive
-              ? "underline underline-offset-4 text-[#26c6da] font-bold"
+              ? "underline underline-offset-4 primary-text font-bold"
               : ""
           }
         >
@@ -108,7 +107,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 dark:bg-slate-700 rounded-box w-52 z-40"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white dark:bg-slate-700 rounded-box w-52 z-40"
           >
             {navOption}
           </ul>
@@ -158,7 +157,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 dark:bg-slate-700 rounded-box w-52"
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white dark:bg-slate-700 rounded-box w-52"
             >
               <li className="font-semibold">
                 <a>{user?.displayName}</a>

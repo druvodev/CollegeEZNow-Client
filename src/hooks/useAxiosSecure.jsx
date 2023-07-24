@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Custom Axios instance with base URL
 const useAxiosSecure = axios.create({
-  baseURL: "https://collegeeznow.onrender.com",
+  baseURL: "http://localhost:5000",
 });
 
 useAxiosSecure.interceptors.response.use(

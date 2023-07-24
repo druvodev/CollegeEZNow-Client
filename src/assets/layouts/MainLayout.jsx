@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { PuffLoader } from "react-spinners";
 import Footer from "../pages/Shared/Footer";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
   const { loading } = useContext(AuthContext);
@@ -18,6 +19,7 @@ const MainLayout = () => {
         <Outlet />
       )}
       <Footer />
+      <Toaster />
     </div>
   );
 };
