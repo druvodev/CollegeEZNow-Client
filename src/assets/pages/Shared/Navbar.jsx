@@ -16,6 +16,10 @@ const Navbar = () => {
       if (storedTheme === "dark") {
         document.documentElement.classList.add("dark");
       }
+    } else {
+      setIsTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 

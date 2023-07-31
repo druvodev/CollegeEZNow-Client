@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import CollegeCard from "./CollegeCard";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
@@ -5,21 +6,19 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 const PopularCollage = () => {
   const [colleges, setColleges] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await useAxiosSecure.get("/topcollege");
-        setColleges(response.data);
-        if (response.status != 200) {
-          setColleges("empty");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await useAxiosSecure.get("/topcollege");
+      setColleges(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setTimeout(fetchData, 1000);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
-  }, [setColleges]);
+  }, []);
 
   return (
     <section className="mt-10 sm:mt-10">
