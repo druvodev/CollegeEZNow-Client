@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { AuthContext } from "../../providers/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { FaEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 

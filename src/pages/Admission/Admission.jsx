@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { AuthContext } from "../../../providers/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Admission = () => {

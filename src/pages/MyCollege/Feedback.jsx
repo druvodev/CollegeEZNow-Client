@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import StarRatings from "react-star-ratings";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { AuthContext } from "../../../providers/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Feedback = ({ collegeId, studentName }) => {

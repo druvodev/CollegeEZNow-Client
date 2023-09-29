@@ -4,7 +4,7 @@ import { CgDanger } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 
 import { updateProfile } from "firebase/auth";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "./SocialLogin";
 
 const SignUP = () => {

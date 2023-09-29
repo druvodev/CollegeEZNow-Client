@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import ReviewCard from "./ReviewCard";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const ReviewSection = () => {
   const [reviews, setReviews] = useState([]);

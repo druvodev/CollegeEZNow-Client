@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaUserFriends } from "react-icons/fa";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const ResearchPapers = () => {
   const [researchPapers, setResearchPapers] = useState([]);

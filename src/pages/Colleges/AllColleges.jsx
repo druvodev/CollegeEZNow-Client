@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CollegeCard from "./CollegeCard";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AllColleges = () => {
   const [colleges, setColleges] = useState([]);

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import CollegeCard from "./CollegeCard";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const PopularCollage = () => {
   const [colleges, setColleges] = useState([]);

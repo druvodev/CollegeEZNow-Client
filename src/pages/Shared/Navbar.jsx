@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 import { useContext, useEffect, useState } from "react";
-import {} from "react-icons/hi";
 import Profile from "./Profile";
 
 const Navbar = () => {
@@ -129,7 +128,7 @@ const Navbar = () => {
         <button onClick={toggleTheme}>
           {isTheme === "dark" ? (
             <svg
-              className="swap-on fill-current w-9 h-9"
+              className="swap-on fill-current w-9 h-9 active:animate-spin"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >

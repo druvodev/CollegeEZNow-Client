@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { CgDanger } from "react-icons/cg";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "./SocialLogin";
 
 const SignIn = () => {

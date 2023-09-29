@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../pages/Shared/Navbar";
 import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import { AuthContext } from "../providers/AuthProvider";
 import { PuffLoader } from "react-spinners";
 import Footer from "../pages/Shared/Footer";
 import { Toaster } from "react-hot-toast";

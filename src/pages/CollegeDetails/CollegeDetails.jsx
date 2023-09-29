@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useParams } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import StarRatings from "react-star-ratings";
 import { useNavigate } from "react-router-dom";
 

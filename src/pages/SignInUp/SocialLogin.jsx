@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SocialLogin = () => {
   const { signInWithGoogle, signInWithGithub, setLoading } =
